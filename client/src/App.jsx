@@ -85,7 +85,7 @@ export default function App() {
     try {
       const apiEndpoint = import.meta.env.DEV 
         ? 'http://localhost:3001/api/audit' 
-        : '/api/audit';
+            : 'https://page-plus-1-mp0n.onrender.com/api/audit';
       const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: {
