@@ -83,7 +83,10 @@ export default function App() {
     simulateLoadingLogs(targetUrl);
 
     try {
-      const response = await fetch('https://page-plus-api.onrender.com/api/audit', {
+      const apiEndpoint = import.meta.env.DEV 
+        ? 'http://localhost:3001/api/audit' 
+        : '/api/audit';
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
